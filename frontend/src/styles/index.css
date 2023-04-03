@@ -1,0 +1,5 @@
+/* All the styles should be responsive and should work for almost all screen sizes */
+html, body {
+  margin: 0;
+  padding: 0;
+}
