@@ -35,7 +35,7 @@ export const signup = async (req, res) => {
 };
 
 export const signin = async (req, res) => {
-  const user = await User.findoneCount({
+  const user = await User.findOne({
     username: req.body.username,
   });
 

@@ -8,6 +8,9 @@ import config from "./config/index.js";
 import db from "./models/index.js";
 
 import userRoutes from "./routes/user.js";
+import listRoutes from "./routes/list.js";
+import todoRoutes from "./routes/todo.js";
+
 const app = express();
 
 const corsOptions = {
@@ -25,6 +28,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/user", userRoutes);
+app.use("/list", listRoutes);
+app.use("/todo", todoRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello to TODO++ API");

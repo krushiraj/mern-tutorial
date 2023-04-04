@@ -15,7 +15,7 @@ import {
 const router = Router();
 
 router.post("/signin", signin);
-router.post("/", [checkDuplicateUsernameOrEmail], signup);
+router.post("/signup", [checkDuplicateUsernameOrEmail], signup);
 router.get("/", verifyToken, getUser);
 router.put("/", [verifyToken, checkDuplicateUsernameOrEmail], updateUser);
 router.delete("/", verifyToken, deleteUser);
