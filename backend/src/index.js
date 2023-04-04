@@ -3,6 +3,11 @@
 
 import express from "express";
 import cors from "cors";
+import config from "./config/index.js";
+
+import db from "./models/index.js";
+
+import userRoutes from "./routes/user.js";
 const app = express();
 
 const corsOptions = {
@@ -19,9 +24,24 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
+app.use("/user", userRoutes);
+
 app.get("/", (req, res) => {
   res.send("Hello to TODO++ API");
 });
+
+db.mongoose
+  .connect(config.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Successfully connect to MongoDB.");
+  })
+  .catch((err) => {
+    console.error("Connection error", err);
+    process.exit();
+  });
 
 const PORT = process.env.PORT || 8000;
 
