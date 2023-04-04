@@ -1,0 +1,21 @@
+/* Nice styling for listing all the items inside a wrapper. Do not show dots or numbering */
+.list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 50vw;
+  height: 100%;
+  padding: 0;
+  margin: 0 auto;
+  list-style-type: none;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  transition: width 0.5s ease;
+}

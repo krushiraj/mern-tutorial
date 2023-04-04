@@ -1,0 +1,30 @@
+.button-fill {
+  color: white;
+  background-color: #2a9d8f;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
+.button-outline {
+  color: #2a9d8f;
+  background-color: white;
+  border: 1px solid #2a9d8f;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
+/* grey out the button and change pointer event when disabled */
+.button-fill:disabled {
+  background-color: #dedede;
+  color: #a8a8a8;
+  pointer-events: none;
+}
+
+.button-fill:hover {
+  background-color: #2a7b6a;
+}
+
+.button-outline:hover {
+  background-color: #dedede;
+}

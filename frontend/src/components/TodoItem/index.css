@@ -1,0 +1,44 @@
+.todo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.25rem auto;
+  list-style-type: none;
+  border: 1px solid #bebebe;
+  border-radius: 5px;
+}
+
+.title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.title-row h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 100%;
+  margin: 0;
+}
+
+.title-row button {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.title-row input {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  margin-right: 0.5rem;
+}
+
+.description {
+  font-size: medium;
+  width: 100%;
+}
