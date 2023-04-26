@@ -23,7 +23,7 @@ const SignupPage = () => {
       setErrorMsg("Passwords do not match");
     } else {
       try {
-        const response = await fetch("http://localhost:8000/user", {
+        const response = await fetch("http://localhost:8000/user/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -42,6 +42,7 @@ const SignupPage = () => {
         localStorage.setItem("user", JSON.stringify(data.user));
         setUser(data.user);
 
+        // navigator
         history("/lists");
       } catch (error) {
         setErrorMsg(error.message);
