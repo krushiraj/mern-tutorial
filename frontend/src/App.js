@@ -22,78 +22,25 @@ function Routes() {
   return routes;
 }
 
-// function App() {
-//   const [user, setUser] = useState(null);
+function App() {
+  const [user, setUser] = useState(null);
 
-//   if (!user) {
-//     try {
-//       const userFromStorage = JSON.parse(localStorage.getItem("user"));
-//       if (userFromStorage) {
-//         setUser(userFromStorage);
-//       }
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   }
+  if (!user) {
+    try {
+      const userFromStorage = JSON.parse(localStorage.getItem("user"));
+      if (userFromStorage) {
+        setUser(userFromStorage);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
-//   return (
-//     <UserContext.Provider value={[user, setUser]}>
-//       <Routes />
-//     </UserContext.Provider>
-//   );
-// }
-
-const App = () => {
   return (
-    <div
-      style={{
-        height: "100vh",
-        width: "100%",
-        backgroundColor: "greenyellow",
-        display: "flex",
-        justifyContent: "space-around",
-        alignItems: "center",
-        flexDirection: "row",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          width: "100%",
-          textAlign: "center",
-          backgroundColor: "cyan",
-          height: "33vh",
-        }}
-      >
-        <p style={{ margin: 'auto' }} >1</p>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          width: "100%",
-          textAlign: "center",
-          backgroundColor: "magenta",
-          height: "33vh",
-        }}
-      >
-        <p style={{ margin: 'auto' }}>2</p>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          width: "100%",
-          textAlign: "center",
-          backgroundColor: "#feea23",
-          height: "33vh",
-        }}
-      >
-        <p style={{ margin: 'auto' }}>3</p>
-      </div>
-    </div>
+    <UserContext.Provider value={[user, setUser]}>
+      <Routes />
+    </UserContext.Provider>
   );
-};
+}
 
 export default App;
